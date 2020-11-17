@@ -22,7 +22,7 @@ run_kubeval() {
     rm -rf helm-output;
 }
 
-helm repo add stable https://kubernetes-charts.storage.googleapis.com/;
+helm repo add stable https://charts.helm.sh/stable;
 
 # For all charts (i.e for every directory) in the directory
 for CHART in "$CHARTS_PATH"/*/; do

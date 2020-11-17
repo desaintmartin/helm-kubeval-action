@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM alpine/helm:3.2.4
+FROM alpine/helm:3.4.1
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]

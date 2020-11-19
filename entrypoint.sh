@@ -45,4 +45,5 @@ for CHART in "$CHARTS_PATH"/*/; do
     else
         run_kubeval "$(pwd)" "/dev/null"
     fi
+    rm -rf $(pwd)
 done

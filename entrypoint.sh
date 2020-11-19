@@ -22,7 +22,14 @@ run_kubeval() {
     rm -rf helm-output;
 }
 
-helm repo add stable https://charts.helm.sh/stable;
+# Parse helm repos located in the $CONFIG_FILE file / Ignore commented lines (#)
+while read REPO_CONFIG
+do
+    case "$REPO_CONFIG" in \#*) continue ;; esac
+    REPO=$(echo $REPO_CONFIG | cut -d '=' -f1);
+    URL=$(echo $REPO_CONFIG | cut -d '=' -f2);
+    helm repo add $REPO $URL;
+done < $CONFIG_FILE
 
 # For all charts (i.e for every directory) in the directory
 for CHART in "$CHARTS_PATH"/*/; do

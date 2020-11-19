@@ -9,6 +9,10 @@ inputs:
     description: "The path to the directory containing your Chart(s)"
     default: "."
     required: false
+  config:
+    description: "The path to the configuration file containing your Chart(s) Repository Url(s)"
+    default: "config_repos"
+    required: false
   output:
     description: "Output format for results"
     default: "stdout"
@@ -34,6 +38,7 @@ runs:
   image: './Dockerfile'
   env:
     CHARTS_PATH: ${{ inputs.path }}
+    CONFIG_FILE: ${{ inputs.config }}
     OUTPUT: ${{ inputs.output }}
     STRICT: ${{ inputs.strict }}
     KUBERNETES_VERSION: ${{ inputs.version }}

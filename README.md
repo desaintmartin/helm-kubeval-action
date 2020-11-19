@@ -20,6 +20,7 @@ jobs:
       uses: desaintmartin/helm-kubeval-action@master
       with:
         path: ./helm-charts
+        config: ./config_repos
 ```
 
 By default the action will:
@@ -39,6 +40,7 @@ For more information on inputs, see the [API Documentation](https://developer.gi
 | Property | Default | Description |
 | --- | --- | --- |
 | path | . | The path to the directory containing your Chart(s) |
+| config | config_repos | The path to the configuration file containing your Chart(s) Repository Url(s) |
 | output | stdout | How to format the output from Conftest (stdout, json or tap) |
 | openshift | false | Whether or not to use the OpenShift schemas rather than the upstread Kubernetes ones |
 | strict | true | Whether ot not to fail for additional properties in objects |

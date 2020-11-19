@@ -45,5 +45,6 @@ for CHART in "$CHARTS_PATH"/*/; do
     else
         run_kubeval "$(pwd)" "/dev/null"
     fi
-    rm -rf $(pwd)
+    echo "Cleanup $(pwd)/charts directory after we are done running Kubeval"
+    rm -rf $(pwd)/charts/
 done

@@ -26,7 +26,7 @@ jobs:
 By default the action will:
 
 - Look for each Helm Chart
-- For each, look for calues file in its ci directory (otherwise don't use values file)
+- For each, look for values file in its ci directory (otherwise don't use values file)
 - run `helm template` and validate the output as Kubernetes objects.
 
 ## Inputs

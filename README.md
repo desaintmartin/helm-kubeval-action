@@ -1,5 +1,7 @@
 # Helm Kubeval
 
+Note: this project is archived and has moved to https://github.com/wiremind/helm-kubeval-action.
+
 A [GitHub Action](https://github.com/features/actions) for using [Kubeval](https://github.com/instrumenta/kubeval) to validate Helm Charts in your workflows.
 
 Supports Helm 3 only.
